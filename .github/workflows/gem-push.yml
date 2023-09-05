@@ -22,7 +22,7 @@ jobs:
       run: |
         gem build *.gemspec
         gem install *.gem
-        
+        jruby -S sample/sample.z.rb
   deploy:
     name: Publish
     runs-on: ubuntu-latest
@@ -37,7 +37,7 @@ jobs:
     - name: Set up Ruby 3.1
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1.1
+        ruby-version: jruby
     - run: bundle install
 
     - name: Publish to GPR
