@@ -13,6 +13,8 @@ ruby rake-compilerライブラリ
 
 ## Usage ##
 
+sample/samplez.rbを参照
+
 ## install ##
 
 From rubygems:  
