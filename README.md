@@ -4,6 +4,8 @@ github actionsでjrubyの実行テスト
 
 ## decscription ##
 
+詳細は、https://siranovel.github.io/mydocs/stdy4act
+
 ## Demo ##
 
 ## VS. ##
