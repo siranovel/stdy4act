@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## [0.0.3] - 2023-10-21
+
+### Added
+- Add test parameter of A two-dimensional array
+
 ## [0.0.2] - 2023-09-27
 
 ### Added
