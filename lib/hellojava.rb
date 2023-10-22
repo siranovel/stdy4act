@@ -38,10 +38,34 @@ module HelloJavaLib
         p calc.add
         return
     end
-
+    # 引数に二次元配列の場合
+    #
+    # @overload func_d(fname, vals)
+    #   @param [String] fname 文字列
+    #   @param [Array]  vals 二次元の配列(double[][])
+    #   @return [void]
+    # @example
+    #    vals = [
+    #             [12.3, 22.5, 33.7, 44.6],
+    #             [12.3, 22.5, 33.7, 44.6, 55.8],
+    #           ]
+    #    HelloJavaLib::func_d("fname.jpg", vals) 
+    #    =>
+    #     fname:fname.jpg size:2
+    #     vals[0] size:4
+    #     12.300000 22.500000 33.700000 44.600000
+    #     vals[1] size:5
+    #     12.300000 22.500000 33.700000 44.600000 55.800000
+    def func_d(fname, vals)
+        p JavaCallTest.sub1(
+          fname, vals.to_java(Java::double[])
+        );
+        return
+    end
     module_function :func_a
     module_function :func_b
     module_function :func_c
+    module_function :func_d
 
 end
 
