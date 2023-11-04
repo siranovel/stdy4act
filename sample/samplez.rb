@@ -19,5 +19,30 @@ RSpec.describe HelloJavaLib do
           HelloJavaLib::func_d("fname.jpg", vals)
         ).to eq nil
     end
+    describe HelloJavaLib::FuncTypes do
+        it '#func_type1' do
+            expect(
+              HelloJavaLib::FuncTypes.func_type1("Hello") {|s|
+                p s + "!!"
+                next
+              }
+            ).to eq nil
+        end
+        it '#func_type2' do
+            expect(
+              HelloJavaLib::FuncTypes.func_type2() {
+                next "Hello"
+              }
+            ).to eq nil
+        end
+        it '#func_type3' do
+            vals = [11, 22, 33, 44]
+            expect(
+              HelloJavaLib::FuncTypes.func_type3(vals) {|xi|
+                next xi.sum(0.0) / xi.length
+              }
+            ).to eq nil
+        end
+    end
 end
 
