@@ -2,8 +2,10 @@ require 'java'
 require 'hellojava.jar'
 java_import 'java.lang.System'
 java_import 'JavaCallTest'
+java_import 'JavaCallTest2'
 java_import 'Hoge'
 
+# jrubyからjavaの呼び出し
 module HelloJavaLib
     # Systemクラス使用
     #
@@ -57,10 +59,62 @@ module HelloJavaLib
     #     vals[1] size:5
     #     12.300000 22.500000 33.700000 44.600000 55.800000
     def func_d(fname, vals)
-        p JavaCallTest.sub1(
+        JavaCallTest.sub1(
           fname, vals.to_java(Java::double[])
         );
         return
+    end
+    # 引数に関数型の場合
+    class FuncTypes
+        class << self
+            # @overload func_type1(str, &func)
+            #   @param [String] str  文字列
+            #   @param [block]  func 関数型(引数:文字列, 戻り値:なし)
+            #   @return [void]
+            # @example
+            #   HelloJavaLib::FuncTypes.func_type1("Hello") {|s|
+            #     p s + "!!"
+            #     next
+            #   }
+            #   =>
+            #     funcType1 in
+            #     "Hello!!"
+            def func_type1(str, &func)
+                JavaCallTest2.funcType1(str, func)
+                return
+            end
+            # @overload func_type2(&func)
+            #   @param [block] func 関数型(引数:なし, 戻り値:文字列)
+            #   @return [void]
+            # @example
+            #   HelloJavaLib::FuncTypes.func_type2() {
+            #     next "Hello"
+            #   }
+            #   =>
+            #     funcType2 in
+            #     "Hello"
+            def func_type2(&func)
+                p JavaCallTest2.funcType2(func)
+                return
+            end
+            # @overload func_type3(vals, &func)
+            #   @param [Array] vals double型の配列(duble[])
+            #   @param [block] func 関数型(引数:double[], 戻り値:double)
+            #   @return [void]
+            # @example
+            #   vals = [11, 22, 33, 44]
+            #   HelloJavaLib::FuncTypes.func_type3(vals) {|xi|
+            #     next xi.sum(0.0) / xi.length
+            #   }
+            #   =>
+            #     funcType3 in
+            #     27.5
+            def func_type3(vals, &func)
+                p JavaCallTest2.funcType3(vals.to_java(Java::double), func)
+                return
+            end
+
+        end
     end
     module_function :func_a
     module_function :func_b
