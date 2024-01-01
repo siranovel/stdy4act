@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## [0.0.5] - 2023-12-31
+
+### Added
+- Add parameter test of Hash Type.
+
+### change
+- chg function name from func_d to func_v.
+
 ## [0.0.4] - 2023-11-03
 
 ### Added
