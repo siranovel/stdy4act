@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 public class JavaCallTest {
     public static String str1() {
@@ -16,6 +17,17 @@ public class JavaCallTest {
             }
             System.out.println();
         }
-    } 
+    }
+    public static void hash(Map<String, double[]> vals) {
+        System.out.println("hash in");
+        for(Map.Entry<String, double[]> entry : vals.entrySet()) {
+            System.out.print(entry.getKey());
+            double[] v = entry.getValue();
+            for(int i = 0; i < v.length; i++) {
+                System.out.printf(" %f", v[i]);
+            }
+            System.out.println();
+        }
+    }
 }
 

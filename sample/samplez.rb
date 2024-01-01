@@ -10,15 +10,25 @@ RSpec.describe HelloJavaLib do
     it '#func_c' do
         expect(HelloJavaLib::func_c(2, 3)).to eq nil
     end
-    it '#func_d' do
+    it '#func_v' do
         vals = [
                  [12.3, 22.5, 33.7, 44.6],
                  [12.3, 22.5, 33.7, 44.6, 55.8],
                ]
         expect(
-          HelloJavaLib::func_d("fname.jpg", vals)
+          HelloJavaLib::func_v("fname.jpg", vals)
         ).to eq nil
     end
+    it '#func_h' do
+        vals = {
+                 "dt1" => [12.3, 22.5, 33.7, 44.6],
+                 "dt2" => [12.3, 22.5, 33.7, 44.6, 55.8],
+               }
+        expect(
+          HelloJavaLib::func_h(vals)
+        ).to eq nil
+    end
+
     describe HelloJavaLib::FuncTypes do
         it '#func_type1' do
             expect(

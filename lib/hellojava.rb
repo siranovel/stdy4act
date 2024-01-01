@@ -4,6 +4,7 @@ java_import 'java.lang.System'
 java_import 'JavaCallTest'
 java_import 'JavaCallTest2'
 java_import 'Hoge'
+java_import 'java.util.HashMap'
 
 # jrubyからjavaの呼び出し
 module HelloJavaLib
@@ -42,7 +43,7 @@ module HelloJavaLib
     end
     # 引数に二次元配列の場合
     #
-    # @overload func_d(fname, vals)
+    # @overload func_v(fname, vals)
     #   @param [String] fname 文字列
     #   @param [Array]  vals 二次元の配列(double[][])
     #   @return [void]
@@ -51,18 +52,40 @@ module HelloJavaLib
     #             [12.3, 22.5, 33.7, 44.6],
     #             [12.3, 22.5, 33.7, 44.6, 55.8],
     #           ]
-    #    HelloJavaLib::func_d("fname.jpg", vals) 
+    #    HelloJavaLib::func_v("fname.jpg", vals) 
     #    =>
     #     fname:fname.jpg size:2
     #     vals[0] size:4
     #     12.300000 22.500000 33.700000 44.600000
     #     vals[1] size:5
     #     12.300000 22.500000 33.700000 44.600000 55.800000
-    def func_d(fname, vals)
+    def func_v(fname, vals)
         JavaCallTest.sub1(
           fname, vals.to_java(Java::double[])
         );
         return
+    end
+    # 引数にHashの場合
+    #
+    # @overload func_h(vals)
+    #   @param [Hash] vals Hash(String, double[])
+    #   @return [void]
+    # @example
+    #    vals = {
+    #             "dt1" => [12.3, 22.5, 33.7, 44.6],
+    #             "dt2" => [12.3, 22.5, 33.7, 44.6, 55.8],
+    #           }
+    #    HelloJavaLib::func_h(vals)
+    #    =>
+    #     hash in
+    #     dt1 12.300000 22.500000 33.700000 44.600000
+    #     dt2 12.300000 22.500000 33.700000 44.600000 55.800000
+    def func_h(vals)
+        o = HashMap.new
+        vals.each{|k, v|
+            o[k] = v.to_java(Java::double)
+        }
+        JavaCallTest.hash(o)
     end
     # 引数に関数型の場合
     class FuncTypes
@@ -119,7 +142,7 @@ module HelloJavaLib
     module_function :func_a
     module_function :func_b
     module_function :func_c
-    module_function :func_d
-
+    module_function :func_v
+    module_function :func_h
 end
 
