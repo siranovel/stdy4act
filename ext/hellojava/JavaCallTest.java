@@ -29,5 +29,22 @@ public class JavaCallTest {
             System.out.println();
         }
     }
+    public static IntervalEstim[] strut() {
+        IntervalEstim[] ret = new IntervalEstim[2];
+
+        ret[0] = new IntervalEstim(2.0, 3.0);
+        ret[1] = new IntervalEstim(3.0, 4.0);
+        return ret;
+    }
+    public static class IntervalEstim {
+        private double min;
+        private double max;
+        public IntervalEstim(double min, double max) {
+            this.min = min;
+            this.max = max;
+        }
+        public double getMin() { return this.min; }
+        public double getMax() { return this.max; }
+    }
 }
 

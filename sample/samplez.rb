@@ -28,6 +28,11 @@ RSpec.describe HelloJavaLib do
           HelloJavaLib::func_h(vals)
         ).to eq nil
     end
+    it '#func_s' do
+        expect(
+          HelloJavaLib::func_s()
+        ).to eq nil
+    end
 
     describe HelloJavaLib::FuncTypes do
         it '#func_type1' do

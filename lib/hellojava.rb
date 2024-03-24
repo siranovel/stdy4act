@@ -87,6 +87,29 @@ module HelloJavaLib
         }
         JavaCallTest.hash(o)
     end
+    # 戻り値がハッシュの配列の場合
+    #
+    # @overload func_s()
+    #   @return [void]
+    # @example
+    #   HelloJavaLib::func_s()
+    #   =>
+    #     [{:min=>2.0, :max=>3.0}, {:min=>3.0, :max=>4.0}]
+    def func_s()
+        retRb = []
+        retJava = JavaCallTest.strut()
+        sz = retJava.size
+        sz.times do |i|
+            retRb.push(
+              {
+                "min": retJava[i].getMin(),
+                "max": retJava[i].getMax()
+              }
+            )
+        end
+        p retRb
+        return
+    end
     # 引数に関数型の場合
     class FuncTypes
         class << self
@@ -144,5 +167,6 @@ module HelloJavaLib
     module_function :func_c
     module_function :func_v
     module_function :func_h
+    module_function :func_s
 end
 
