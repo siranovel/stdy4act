@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## [0.0.6] - 2024-03-23
+
+### Added
+- Add return test of Hash Type.
+
 ## [0.0.5] - 2023-12-31
 
 ### Added
