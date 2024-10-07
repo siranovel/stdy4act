@@ -1,14 +1,14 @@
 name: Ruby Gem2
 
 on:
-  workflow_dispatc:
+  workflow_dispatch:
     inputs:
       otp:
         description: "One-time password for RubyGems.org"
         required: true
 concurrency:
   group: ${{ github.workflow }}
-  cancel-in-progre: true
+  cancel-in-progress: true
 
 jobs:
   build_and_test:
