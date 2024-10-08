@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name          = 'hellojava'
-  s.version       = '0.0.10'
-  s.date          = '2024-10-06'
+  s.version       = '0.0.11'
+  s.date          = '2024-10-07'
   s.summary       = "hello jruby"
   s.description   = "call from jruby to java."
   s.platform      = 'java'
