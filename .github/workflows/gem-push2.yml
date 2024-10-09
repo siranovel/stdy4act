@@ -65,7 +65,7 @@ jobs:
         printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
         chmod 0600 $HOME/.gem/credentials
         ruby -S gem build *.gemspec
-        ruby -S gem push  *.gem
+        ruby -S gem push --otp ${GEM_HOST_OTP_CODE} *.gem
       env:
         GEM_HOST_API_KEY: "${{secrets.RUBYGEMS_AUTH_TOKEN}}"
         GEM_HOST_OTP_CODE: "${{ inputs.otp }}"
