@@ -2,11 +2,6 @@
 
 ## Unreleased
 
-## [0.0.18] - 2024-10-09
-
-### Added
-- add rubygems_mfa_required in gemspec file.
-
 ## [0.0.6] - 2024-03-23
 
 ### Added
