@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run github action using docker
-        uses: siranovel/tweetpottst@v1.0.0
+        uses: Twitter pot@v1.0.0
         with:
           text: 'New commit pushd! at workflow from doker'
           TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
