@@ -65,7 +65,7 @@ jobs:
       run: |
         mkdir -p $HOME/.gem
         touch $HOME/.gem/credentials
-        cat << EOF > > $HOME/.gem/credentials
+        cat << EOF > $HOME/.gem/credentials
         ---
         github: Bearer ${GITHUB_TOKEN}
         rubygems_api_key: ${GEM_HOST_API_KEY}
