@@ -63,11 +63,10 @@ jobs:
     - name: Publish to RubyGems
       uses: cadwallion/publish-rubygems-action@master
       with:
+        GEM_HOST_OTP_CODE: "${{ inputs.otp }}"
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_AUTH_TOKEN}}
         RELEASE_COMMAND: gem push --otp ${{ GEM_HOST_OTP_CODE }} *.gem
-      env:
-        GEM_HOST_OTP_CODE: "${{ inputs.otp }}"
     - name: Publish to RubyGems
       run: |
         mkdir -p $HOME/.gem
