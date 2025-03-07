@@ -24,7 +24,7 @@ jobs:
         gem install *.gem
         cd sample
         rake -f act.rk spec
-        #rspec sample/samplez.rb
+        # rspec sample/samplez.rb
   deploy:
     name: Publish
     runs-on: ubuntu-latest
