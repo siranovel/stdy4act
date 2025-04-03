@@ -4,7 +4,7 @@ github actionsでjrubyの実行テスト
 
 ## decscription ##
 
-詳細は、https://siranovel.github.io/mydocs/stdy4act
+詳細は、https://siranovel.github.io/mydocs/stdy4act  
 
 ## Demo ##
 
@@ -15,7 +15,7 @@ ruby rake-compilerライブラリ
 
 ## Usage ##
 
-sample/samplez.rbファイルを参照
+sample/spec内の各ファイル参照
 
 ## install ##
 
