@@ -18,7 +18,6 @@ jobs:
         ruby-version: jruby
     - run: bundle install
     - run: gem install rspec
-    - run: gem install rbs
     - name: test
       run: |
         gem build *.gemspec
