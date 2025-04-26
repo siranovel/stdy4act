@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.metadata = {
     "github_repo" => "ssh://github.com/siranovel/stdy4act",
   }
-  s.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
-  s.add_development_dependency 'rake-compiler', '~> 1.2', '>= 1.2.5'
+  s.add_dependency 'rake', '~> 12.3', '>= 12.3.3'
+  s.add_dependency 'rake-compiler', '~> 1.2', '>= 1.2.5'
 end
 
