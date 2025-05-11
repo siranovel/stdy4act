@@ -1,10 +1,9 @@
 Gem::Specification.new do |s|
   s.name          = 'hellojava'
-  s.version       = '0.0.24'
+  s.version       = '0.0.25'
   s.date          = '2024-10-12'
   s.summary       = "hello jruby"
   s.description   = "call from jruby to java."
-  s.platform      = 'java'
   s.authors       = ["siranovel"]
   s.email         = "siranovel@gmail.com"
   s.homepage      = "http://github.com/siranovel/stdy4act"
