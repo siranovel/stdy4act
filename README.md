@@ -24,12 +24,19 @@ From rubygems:
     [sudo] gem install hellojava
 ~~~
 
+Install via Gemfile:  
+~~~
+source "https://rubygems.pkg.github.com/siranovel" do
+    gem "hellojava"
+end
+~~~
+
 or from the git repository on github:  
 ~~~
     git clone https://github.com/siranovel/stdy4act.git  
     cd stdy4act  
-    gem build *.gemspec
-    gem install *.gem
+    gem build hellojava.gemspec
+    gem install hellojava
 ~~~
 
 ## Contribution ##
