@@ -67,7 +67,6 @@ jobs:
         ruby -S gem build *.gemspec
         curl --data-binary @hellojava-0.1.1.gem \
               -H 'Authorization:${GEM_HOST_API_KEY}' \
-              -H 'OTP:github' \
               https://rubygems.org/api/v1/gems
 #        mkdir -p $HOME/.gem
 #        touch $HOME/.gem/credentials
